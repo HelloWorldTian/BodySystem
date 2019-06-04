@@ -1,7 +1,27 @@
 fileFormatVersion: 2
 guid: ecd3762ab0ccc4148b9afaa1f0b07cb4
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: IndexBG_0
+    21300002: IndexBG_1
+    21300004: IndexBG_2
+    21300006: IndexBG_3
+    21300008: IndexBG_4
+    21300010: IndexBG_5
+    21300012: IndexBG_6
+    21300014: IndexBG_7
+    21300016: IndexBG_8
+    21300018: IndexBG_9
+    21300020: IndexBG_10
+    21300022: IndexBG_11
+    21300024: IndexBG_12
+    21300026: IndexBG_13
+    21300028: IndexBG_14
+    21300030: IndexBG_15
+    21300032: IndexBG_16
+    21300034: IndexBG_17
+    21300036: IndexBG_18
+    21300038: IndexBG_19
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -40,7 +60,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +89,420 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: IndexBG_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1257
+        width: 1368
+        height: 770
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd098b64847e4b4483fc378ccec8dcc
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_1
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 1981
+        width: 279
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148bd39caae14734190187fd13d1ee3f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_2
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 1916
+        width: 473
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f2d37f811338f4e94cc2cfb52f55d1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_3
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 1476
+        width: 402
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3442110e7eac618498c40a542a91f6e5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_4
+      rect:
+        serializedVersion: 2
+        x: 1776
+        y: 1473
+        width: 243
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa8fc6bbd444b64f8948dc661ebd897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 884
+        width: 978
+        height: 371
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eae35c17d33df3f49ada033079a658ac
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_6
+      rect:
+        serializedVersion: 2
+        x: 1372
+        y: 1036
+        width: 401
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b615bf3920550f04ebb74e56f4ee5f0e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_7
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 1030
+        width: 229
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2d5aadc99cd664d80e17b4a309a97a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_8
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 443
+        width: 382
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84434d4a4a78f964cbca0e72a8c066b9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_9
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 443
+        width: 378
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0b707ecdf9de44484d0271abc8626d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_10
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 596
+        width: 396
+        height: 438
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c607848315ffbbe4bbfed0c5a6b7b445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_11
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 595
+        width: 389
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f4fc88672db6145acf4249a214f6d4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_12
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 588
+        width: 198
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4bbe6e4868cb034bbcaa99d84a0c9c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_13
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1
+        width: 298
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 926da778df923514bb31d8f5b1c5982c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_14
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 1
+        width: 268
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9068e71c77496ad4d9c543e53ff9ed4b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_15
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 0
+        width: 141
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5c7d46fae62d44788cd16781cb4782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_16
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 154
+        width: 354
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0da3bc47e547d49aa688def2bdb8eb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_17
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 153
+        width: 332
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79d899329c152342859e4d443f22827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_18
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 153
+        width: 326
+        height: 440
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acb9233b87d77cc448fd63dc84520130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndexBG_19
+      rect:
+        serializedVersion: 2
+        x: 1784
+        y: 147
+        width: 162
+        height: 439
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ffcfa345357d64ca62d74080f9bc84
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

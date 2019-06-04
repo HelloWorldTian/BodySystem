@@ -80,10 +80,12 @@
     <Compile Include="Assets\Scripts\ISystem.cs" />
     <Compile Include="Assets\Scripts\LoadingPanel.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
-    <Compile Include="Assets\Scripts\UIController.cs" />
+    <Compile Include="Assets\Scripts\UIMenuPanel.cs" />
+    <Compile Include="Assets\Scripts\UISelectPanel.cs" />
     <None Include="Assets\GAF\Resources\Shaders\GAFShaderBase.cginc" />
     <None Include="Assets\GAF\Resources\Shaders\GAFObjectsGroup.shader" />
     <None Include="Assets\GAF\Docs\What's new.txt" />
+    <None Include="Assets\Material\MaskBlack.shader" />
     <None Include="Assets\GAF\Resources\Shaders\GAFBlur.shader" />
     <None Include="Assets\GAF\Resources\Shaders\GAFFilters.cginc" />
     <None Include="Assets\GAF\Resources\Shaders\GAFMaskReset.shader" />

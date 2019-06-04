@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class UIController : MonoBehaviour {
+public class UISelectPanel : MonoBehaviour {
 
     public Button pageUpBtn;
     public Button downUpBtn;
@@ -11,6 +11,8 @@ public class UIController : MonoBehaviour {
     public Image nowPage;
     public Sprite[] nums;
     public int currentPage;
+
+    public UIMenuPanel menuPanel;
     // Use this for initialization
     void Start () {
 
@@ -30,7 +32,7 @@ public class UIController : MonoBehaviour {
     {
         Debug.Log("up");
         currentPage--;
-        if (currentPage < 0)
+        if (currentPage <=0)
         {
             currentPage = 8;
         }
@@ -41,14 +43,14 @@ public class UIController : MonoBehaviour {
         currentPage++;
         if (currentPage >8)
         {
-            currentPage = 0;
+            currentPage = 1;
         }
         Debug.Log("down");
         ShowPage(currentPage);
     }
     public void SureBtnClick()
-    {
-        Debug.Log("down");
+    {        
+        menuPanel.ShowMenuPanel();
     }
     public void ShowPage(int index)
     {
