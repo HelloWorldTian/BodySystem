@@ -61,6 +61,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleAudio.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModulePhysics.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModulePhysics2D.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleSprite.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUI.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUnityVersion.cs" />
+    <Compile Include="Assets\Demigiant\DOTween\Modules\DOTweenModuleUtils.cs" />
     <Compile Include="Assets\GAF\Examples\Scripts\GAFSceneController.cs" />
     <Compile Include="Assets\GAF\Scripts\Asset\GAFAnimationAsset.cs" />
     <Compile Include="Assets\GAF\Scripts\Asset\GAFTexturesResource.cs" />
@@ -87,6 +94,7 @@
     <None Include="Assets\GAF\Docs\What's new.txt" />
     <None Include="Assets\Material\MaskBlack.shader" />
     <None Include="Assets\GAF\Resources\Shaders\GAFBlur.shader" />
+    <None Include="Assets\Demigiant\DOTween\readme.txt" />
     <None Include="Assets\GAF\Resources\Shaders\GAFFilters.cginc" />
     <None Include="Assets\GAF\Resources\Shaders\GAFMaskReset.shader" />
     <None Include="Assets\GAF\Resources\Shaders\GAFFilteredObject.shader" />
@@ -314,6 +322,9 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/liuhaitao.jack/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>D:/UnityProject/BodySystem/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/unity/2018.2.0/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
