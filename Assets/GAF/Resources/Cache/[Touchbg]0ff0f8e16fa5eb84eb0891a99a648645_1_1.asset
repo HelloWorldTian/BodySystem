@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f0b625614a406468ee087f147489e7, type: 3}
+  m_Name: '[Touchbg]0ff0f8e16fa5eb84eb0891a99a648645_1_1'
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: 11400000, guid: 0ff0f8e16fa5eb84eb0891a99a648645, type: 2}
+  m_Scale: 1
+  m_CSF: 1
+  m_CurrentDataPath: Assets/SWF/Touchbg/
+  m_Data:
+  - m_SearchName: Touchbg
+    m_SharedTexture: {fileID: 2800000, guid: 517570f70a5ef344b89d82d773d79789, type: 3}
+    m_SharedMaterial: {fileID: 2100000, guid: 597b240c0906d4740ab963948e803b95, type: 2}
+  - m_SearchName: Touchbg_2
+    m_SharedTexture: {fileID: 2800000, guid: 4bbf49a97543846469238e15a080d522, type: 3}
+    m_SharedMaterial: {fileID: 2100000, guid: e0325f42b6124ad49af41b4a158cfbce, type: 2}

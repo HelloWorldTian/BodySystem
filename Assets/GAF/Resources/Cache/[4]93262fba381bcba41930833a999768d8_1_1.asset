@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f0b625614a406468ee087f147489e7, type: 3}
+  m_Name: '[4]93262fba381bcba41930833a999768d8_1_1'
+  m_EditorClassIdentifier: 
+  m_Asset: {fileID: 11400000, guid: 93262fba381bcba41930833a999768d8, type: 2}
+  m_Scale: 1
+  m_CSF: 1
+  m_CurrentDataPath: Assets/SWF/System/4/
+  m_Data:
+  - m_SearchName: 4
+    m_SharedTexture: {fileID: 2800000, guid: 4eda98aa8cae3f44ab40aa59c4d8c9ad, type: 3}
+    m_SharedMaterial: {fileID: 2100000, guid: 55abd9a9604329648b3d30d11b5f4e1d, type: 2}
+  - m_SearchName: 4_2
+    m_SharedTexture: {fileID: 2800000, guid: c5661c30a85b73941a29b9fa89ceba3f, type: 3}
+    m_SharedMaterial: {fileID: 2100000, guid: 059a0b6c4b9b723498094f0f74112ebe, type: 2}
+  - m_SearchName: 4_3
+    m_SharedTexture: {fileID: 2800000, guid: 9c7134737c616ac48b1978d28e1d2ab3, type: 3}
+    m_SharedMaterial: {fileID: 2100000, guid: 48531fbcf779c524284b085419ecdbe6, type: 2}

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1730d0b8751ac9e44b6303c6b7703fa7, type: 3}
+  m_Name: jieshaoSWF
+  m_EditorClassIdentifier: 
+  rootClip: {fileID: 0}
+  m_EnableSequenceCaching: 0
+  m_AssetVersion: 4
+  m_AudioResourcesDirectory: SWF/jieshaoSWF/
+  m_AssetData: 4341470005098406000078da63640081067b4628cdc9c009a425fe03811ad304465e864836b00c031f98fc7088c1e1ce610606151706060f20fee004e43b33f23014e5e7978464e6a6e664e6a572304c84990a3296918f212b33b53823313f38dc4daf202f1d24c30c31b5018a1d20b8c11e62f40967b046889a0d0719182600b1830343c3296788a2cbce0c0d7d60454c104520050b0e30345c7346289204d26b9c408ac0b67183fd00e2b2c00de76290809ac10a378b0da60128260155c90a0e01a0378281def04d8e2f49ad28e161306765809bc908d503361cea397b0846e6430390116c22234e651d20ff1e041bc508761013544a470055e9af3fd30fb59d503cc40255c3080b1082ce7870e63001b38f79f6c3cd6626c9ec86bd84ccfe55d306379b8514b36749ae236476efe46ab8d9ac2499bd731e21b33fffcc849bcd4692d991fd84cc8e4a88809bcd4e8ad969cfea09bbdb0d6e36074966ab251276b729dc6c4ed2c2c48990d9078e29c3cde622c9ec99ca84dd2d04379b9b24b36fb210763703dc6c1ed2d2f7994304ccf68dba771066362f6961d247c8ec86dedd70b3f948caf30c4a84dd3d036e36320000857cf1e2
+  m_GUID: 0d300e9553574764fa21f6059a19b08c
+  m_Path: SWF/jieshaoSWF/
+  m_IsExternalDataCollected: 1
+  m_ExternalData:
+  - m_TimelineID: 0
+    m_ObjectTypeFlags: 0200000002000000
+  m_HasNesting: 0
+  m_KeyFrames: []
+  m_AudioResources: []
