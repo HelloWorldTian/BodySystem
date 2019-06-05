@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using RenderHeads.Media.AVProVideo;
 public class UIMenuPanel : MonoBehaviour {
 
     public GameObject firstPanel;
     public GameObject secondPanel;
+    public GameObject moviePanel;
 
     public Sprite[] BtnNornalImg;
     public Sprite[] BtnClickImg;
@@ -19,9 +21,15 @@ public class UIMenuPanel : MonoBehaviour {
     public Button secondCloseBtn;
 
     private float tweenTime = 0.2f;
+
+    private MediaPlayer mediaPlayer;
+    private int currentMediaIndex=-1;
+
+    private const string _nextVideoPath= "VideoData/";
     // Use this for initialization
     void Start () {
         AddEventListener();
+        mediaPlayer = GameObject.Find("AVProMediaPlayer").GetComponent<MediaPlayer>();
     }
 	
 	// Update is called once per frame
@@ -64,6 +72,7 @@ public class UIMenuPanel : MonoBehaviour {
     }
     void CloseMenuPanel()
     {
+        currentMediaIndex = -1;
         //增加动画
         Debug.Log("close1");
         Tweener tweener = firstPanel.transform.DOScaleY(0, tweenTime);
@@ -77,11 +86,16 @@ public class UIMenuPanel : MonoBehaviour {
     }
     void CloseSecondPanel()
     {
+        currentMediaIndex = -1;
         Debug.Log("close2");
         sencondBtnReset();
         //判断是否播放视频中
+        if (mediaPlayer.Control.IsPlaying())
+        {
+            mediaPlayer.Control.Stop();
+        }
+        moviePanel.SetActive(false);
 
- 
         Tweener tweener = secondPanel.transform.DOScaleY(0, tweenTime);
         tweener.SetEase(Ease.Linear);
         tweener.Play();//动画播放
@@ -122,6 +136,18 @@ public class UIMenuPanel : MonoBehaviour {
      
         secondPanelBtns[index].GetComponent<Image>().sprite = BtnClickImg[index];
         secondPanelBtns[index].transform.localScale = new Vector3(1.7f, 1.7f, 1.7f);
+        if (index == 0)
+        {           
+            ShowMovie();
+        }
+        else
+        {
+            if (mediaPlayer.Control.IsPlaying())
+            {
+                mediaPlayer.Control.Stop();
+            }
+            moviePanel.SetActive(false);
+        }
     }
 
     public void ShowMenuPanel()
@@ -142,7 +168,44 @@ public class UIMenuPanel : MonoBehaviour {
             }
         });
     }
+    void ShowMovie()
+    {
+        if (!moviePanel.gameObject.activeInHierarchy|| !moviePanel.activeSelf)
+        {
+            moviePanel.SetActive(true);
+        }
+        
+        if (mediaPlayer.Control.IsPlaying())
+        {
+            mediaPlayer.Control.Stop();
+        }
+        LoadMedia();
+    }
+    void LoadMedia()
+    {
+        MediaPlayer.FileLocation _nextVideoLocation = MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder;
+        Debug.Log("11111111"+ _nextVideoLocation);
+        //if (currentMediaIndex != GameManager.Instance.currentSelectIndex)
+        //{
+        //    currentMediaIndex = GameManager.Instance.currentSelectIndex;
+        //    string path= _nextVideoPath + currentMediaIndex;
+            
+        //    if (!mediaPlayer.OpenVideoFromFile(_nextVideoLocation, path, mediaPlayer.m_AutoStart))
+        //    {
+        //        Debug.LogError("Failed to open video!");
+        //    }
+        //}
 
+        currentMediaIndex = 1;
+        string tempPath = "step" + currentMediaIndex.ToString()+".mp4";
+        string path = System.IO.Path.Combine(_nextVideoPath, tempPath);
+
+        if (!mediaPlayer.OpenVideoFromFile(_nextVideoLocation,path))
+        {
+            Debug.LogError("Failed to open video!");
+        }
+        mediaPlayer.Control.Play();
+    }
     
 }
  

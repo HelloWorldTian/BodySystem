@@ -12,8 +12,12 @@ public class GameManager : MonoBehaviour {
 
     public GameObject SystemContainer;
 
+    public int currentSelectIndex=0;
+
+    public static GameManager Instance;
 	// Use this for initialization
 	void Start () {
+        Instance = this;
         loadingPanel = GameObject.Find("LoadingPanelUI").GetComponent<LoadingPanel>();
         InitGame();
     }
