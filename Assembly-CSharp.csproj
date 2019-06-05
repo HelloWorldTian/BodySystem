@@ -311,6 +311,9 @@
     <Reference Include="UnityEngine.SpatialTracking">
       <HintPath>D:/unity/2018.2.0/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
+    <Reference Include="DOTween">
+      <HintPath>D:/UnityProject/BodySystem/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
+    </Reference>
     <Reference Include="GAF">
       <HintPath>D:/UnityProject/BodySystem/Assets/GAF/Plugins/GAF.dll</HintPath>
     </Reference>
@@ -322,9 +325,6 @@
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/liuhaitao.jack/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
-    </Reference>
-    <Reference Include="DOTween">
-      <HintPath>D:/UnityProject/BodySystem/Assets/Demigiant/DOTween/DOTween.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/unity/2018.2.0/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

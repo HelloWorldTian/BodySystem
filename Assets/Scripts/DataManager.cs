@@ -9,13 +9,13 @@ using System;
 public enum SystemType
 {
     MotorSystem,
-    nervousSystem,
-    endocrineSystem,
-    circulationSystem,
-    respiratorySystem,
-    digestiveSystem,
-    urinarySystem,
-    reproductiveSystem
+    NervousSystem,
+    EndocrineSystem,
+    CirculationSystem,
+    RespiratorySystem,
+    DigestiveSystem,
+    UrinarySystem,
+    ReproductiveSystem
 }
 public class DataManager{
 
@@ -61,12 +61,12 @@ public class DataManager{
             string _path = vi.GetValue("VedioPath");
             string _des = vi.GetValue("Des");
             string _prefabPath = PrefabPath+vi.GetValue("PrefabPath");
+            string _englishName= vi.GetValue("EnglishName");
 
-            
             GameObject tempPre = Resources.Load(_prefabPath)as GameObject;
             ISystem tempSystem = GameObject.Instantiate(tempPre).AddComponent<ISystem>();
             tempSystem.gameObject.name = _name;
-            tempSystem.SetSystemInfo(_name, _type, _des, _path);
+            tempSystem.SetSystemInfo(_name, _type, _des, _path, _englishName);
             tempSystem.transform.SetParent(container.transform);
             tempSystem.transform.localPosition = Vector3.zero;//相对于父物体位置
             if (!m_SystemList.ContainsKey((int)_type))

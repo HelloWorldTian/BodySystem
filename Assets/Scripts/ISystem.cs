@@ -8,6 +8,7 @@ public class ISystem : MonoBehaviour {
     private string systemDes;
     private string vedioPath;
     private SystemType systemType;
+    private string englishName;
 	// Use this for initialization
 	void Start () {
 		
@@ -18,12 +19,13 @@ public class ISystem : MonoBehaviour {
 		
 	}
 
-    public void SetSystemInfo(string _name,SystemType _type,string _des,string _vedioPath)
+    public void SetSystemInfo(string _name,SystemType _type,string _des,string _vedioPath,string _englishName)
     {
         systemName = _name;
         systemDes = _des;
         vedioPath = _vedioPath;
         systemType = _type;
+        englishName = _englishName;
     }
     public string GetSystemName()
     {
@@ -37,5 +39,13 @@ public class ISystem : MonoBehaviour {
     public SystemType GetSystemType()
     {
         return systemType;
+    }
+    public string GetEnglishName()
+    {
+        return englishName;
+    }
+    public string GetVedioPath()
+    {
+        return vedioPath;
     }
 }

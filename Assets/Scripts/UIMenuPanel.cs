@@ -134,7 +134,15 @@ public class UIMenuPanel : MonoBehaviour {
         Tweener tweener = firstPanel.transform.DOScaleY(1, tweenTime);
         tweener.SetEase(Ease.Linear);
         tweener.Play();//动画播放
+        tweener.OnComplete(()=> 
+        {
+            for (int i=0;i< firstPanelBtns.Length;++i)
+            {
+                firstPanelBtns[i].GetComponent<Animation>().Play();
+            }
+        });
     }
 
     
 }
+ 
