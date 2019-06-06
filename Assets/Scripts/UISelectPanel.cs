@@ -14,6 +14,7 @@ public class UISelectPanel : MonoBehaviour {
     public int currentPage;
 
     public UIMenuPanel menuPanel;
+    public Text systemName;
 
     public GameObject IntroducePanel;
     public Text desTitle;
@@ -28,7 +29,7 @@ public class UISelectPanel : MonoBehaviour {
         downUpBtn.onClick.AddListener(PageDownBtnClick);
         sureBtn.onClick.AddListener(SureBtnClick);
         currentPage = GameManager.Instance.currentSelectIndex;
-        ShowPage(currentPage);
+        //ShowPage(currentPage);
     }
 	
 	// Update is called once per frame
@@ -44,7 +45,7 @@ public class UISelectPanel : MonoBehaviour {
         {
             currentPage = 8;
         }
-        ShowPage(currentPage);
+        GameManager.Instance.SetSelectSystem(currentPage);
     }
     public void PageDownBtnClick()
     {
@@ -54,7 +55,8 @@ public class UISelectPanel : MonoBehaviour {
             currentPage = 1;
         }
         Debug.Log("down");
-        ShowPage(currentPage);
+
+        GameManager.Instance.SetSelectSystem(currentPage);
     }
     public void SureBtnClick()
     {        
@@ -62,7 +64,6 @@ public class UISelectPanel : MonoBehaviour {
     }
     public void ShowPage(int index)
     {
-        GameManager.Instance.SetSelectSystem(index);
         index--;
         nowPage.sprite = nums[index];
     }
@@ -73,13 +74,13 @@ public class UISelectPanel : MonoBehaviour {
             Debug.LogError("数据为空");
             return;
         }
+        Debug.Log("显示介绍");
+        ShowSystemName(system.GetSystemName());
+
         desTitle.text = system.GetSystemName();
         desTitleEnglish.text = system.GetEnglishName();
         desContent.text = system.GetSystemDes();
-        if (tweener != null && tweener.IsPlaying())
-        {
-            tweener.Pause();
-        }
+        
         if (isShow)
         {
             tweener = IntroducePanel.transform.DOScaleY(0, 0.3f);
@@ -97,5 +98,9 @@ public class UISelectPanel : MonoBehaviour {
             tweener.Play();
         }
 
+    }
+    void ShowSystemName(string name)
+    {
+        systemName.text = name;
     }
 }

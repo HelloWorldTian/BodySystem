@@ -78,7 +78,13 @@ public class GameManager : MonoBehaviour {
             Debug.Log("未找到" + index + "数据");
             return;
         }
-        currentSelectIndex = index;   
+        Debug.Log("系统" + index + "数据");
+        currentSelectIndex = index;
+        SelectPanelUI.GetComponent<UISelectPanel>().ShowPage(index);
         SelectPanelUI.GetComponent<UISelectPanel>().ShowIntroduce(SelectSystem);//显示介绍面板
+    }
+    public ISystem GetCurrentSystem()
+    {
+        return SelectSystem;
     }
 }

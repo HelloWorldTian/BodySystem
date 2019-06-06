@@ -8,7 +8,11 @@ public class UIMenuPanel : MonoBehaviour {
 
     public GameObject firstPanel;
     public GameObject secondPanel;
-    public GameObject moviePanel;
+    //子面板
+    public GameObject moviePanelUI;
+    public GameObject controlPanelUI;
+    public GameObject KnowledgePanelUI;
+    private ControlPanel controlPanel;
 
     public Sprite[] BtnNornalImg;
     public Sprite[] BtnClickImg;
@@ -25,11 +29,16 @@ public class UIMenuPanel : MonoBehaviour {
     private MediaPlayer mediaPlayer;
     private int currentMediaIndex=-1;
 
+    private int currentSelectBtn=0;
+
     private const string _nextVideoPath= "VideoData/";
     // Use this for initialization
     void Start () {
         AddEventListener();
         mediaPlayer = GameObject.Find("AVProMediaPlayer").GetComponent<MediaPlayer>();
+        controlPanel = controlPanelUI.GetComponent<ControlPanel>();
+        if(controlPanel==null)
+            controlPanel = controlPanelUI.AddComponent<ControlPanel>();
     }
 	
 	// Update is called once per frame
@@ -51,7 +60,7 @@ public class UIMenuPanel : MonoBehaviour {
                 secondBtnClickEvent(j);
             });
         }
-        firstCloseBtn.onClick.AddListener(CloseMenuPanel);
+        firstCloseBtn.onClick.AddListener(CloseFirstPanel);
         secondCloseBtn.onClick.AddListener(CloseSecondPanel);
     }
 
@@ -70,16 +79,14 @@ public class UIMenuPanel : MonoBehaviour {
             secondPanelBtns[i].transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
         }
     }
-    void CloseMenuPanel()
+    void CloseFirstPanel()
     {
         currentMediaIndex = -1;
         //增加动画
-        Debug.Log("close1");
         Tweener tweener = firstPanel.transform.DOScaleY(0, tweenTime);
         tweener.SetEase(Ease.Linear);
         tweener.OnComplete(() =>
         {
-            Debug.Log("123");
             gameObject.SetActive(false);
         });
 
@@ -87,14 +94,13 @@ public class UIMenuPanel : MonoBehaviour {
     void CloseSecondPanel()
     {
         currentMediaIndex = -1;
-        Debug.Log("close2");
         sencondBtnReset();
         //判断是否播放视频中
         if (mediaPlayer.Control.IsPlaying())
         {
             mediaPlayer.Control.Stop();
         }
-        moviePanel.SetActive(false);
+        moviePanelUI.SetActive(false);
 
         Tweener tweener = secondPanel.transform.DOScaleY(0, tweenTime);
         tweener.SetEase(Ease.Linear);
@@ -103,6 +109,7 @@ public class UIMenuPanel : MonoBehaviour {
         {
             secondPanel.SetActive(false);
             firstPanel.SetActive(true);
+            ShowFirsetPanelInfo(currentSelectBtn);
             tweener = firstPanel.transform.DOScaleY(1, tweenTime);
             tweener.SetEase(Ease.Linear);
             tweener.Play();//动画播放
@@ -114,9 +121,8 @@ public class UIMenuPanel : MonoBehaviour {
     {
        
         firstBtnReset();
-        firstPanelBtns[index].GetComponent<Image>().sprite = BtnClickImg[index];
+        ShowFirsetPanelInfo(index);
 
-  
         Tweener tweener = firstPanel.transform.DOScaleY(0, tweenTime);
         tweener.SetEase(Ease.Linear);
         tweener.OnComplete(() =>
@@ -126,33 +132,42 @@ public class UIMenuPanel : MonoBehaviour {
             tweener.Play();
             secondBtnClickEvent(index);
         });
-
+        
+    }
+    void ShowFirsetPanelInfo(int index)
+    {
+        currentSelectBtn = index;
+        firstBtnReset();
+        firstPanelBtns[index].GetComponent<Image>().sprite = BtnClickImg[index];
     }
     void secondBtnClickEvent(int index)
-    {
-       
+    {       
+        currentSelectBtn = index;
         sencondBtnReset();
         secondPanel.SetActive(true);
      
         secondPanelBtns[index].GetComponent<Image>().sprite = BtnClickImg[index];
         secondPanelBtns[index].transform.localScale = new Vector3(1.7f, 1.7f, 1.7f);
-        if (index == 0)
-        {           
-            ShowMovie();
-        }
-        else
+
+        ResetChildPanel();
+        switch (index)
         {
-            if (mediaPlayer.Control.IsPlaying())
-            {
-                mediaPlayer.Control.Stop();
-            }
-            moviePanel.SetActive(false);
-        }
+            case 0:
+                ShowMovie();
+                break;
+            case 1:
+                controlPanel = controlPanel.GetComponent<ControlPanel>();
+                if (controlPanel == null)
+                    controlPanel = controlPanel.gameObject.AddComponent<ControlPanel>();
+                controlPanel.ShowControlPanel();
+                break;
+            case 2:
+                break;
+        }        
     }
 
     public void ShowMenuPanel()
     {
-        Debug.Log("open");
         firstBtnReset();
         gameObject.SetActive(true);
         firstPanel.SetActive(true);
@@ -170,9 +185,9 @@ public class UIMenuPanel : MonoBehaviour {
     }
     void ShowMovie()
     {
-        if (!moviePanel.gameObject.activeInHierarchy|| !moviePanel.activeSelf)
+        if (!moviePanelUI.gameObject.activeInHierarchy|| !moviePanelUI.activeSelf)
         {
-            moviePanel.SetActive(true);
+            moviePanelUI.SetActive(true);
         }
         
         if (mediaPlayer.Control.IsPlaying())
@@ -185,26 +200,38 @@ public class UIMenuPanel : MonoBehaviour {
     {
         MediaPlayer.FileLocation _nextVideoLocation = MediaPlayer.FileLocation.RelativeToStreamingAssetsFolder;
         Debug.Log("11111111"+ _nextVideoLocation);
-        //if (currentMediaIndex != GameManager.Instance.currentSelectIndex)
-        //{
-        //    currentMediaIndex = GameManager.Instance.currentSelectIndex;
-        //    string path= _nextVideoPath + currentMediaIndex;
-            
-        //    if (!mediaPlayer.OpenVideoFromFile(_nextVideoLocation, path, mediaPlayer.m_AutoStart))
-        //    {
-        //        Debug.LogError("Failed to open video!");
-        //    }
-        //}
-
-        currentMediaIndex = 1;
-        string tempPath = "step" + currentMediaIndex.ToString()+".mp4";
-        string path = System.IO.Path.Combine(_nextVideoPath, tempPath);
-
-        if (!mediaPlayer.OpenVideoFromFile(_nextVideoLocation,path))
+        if (currentMediaIndex != GameManager.Instance.currentSelectIndex)
         {
-            Debug.LogError("Failed to open video!");
+            ISystem currentSystem = GameManager.Instance.GetCurrentSystem();
+            string tempPath = currentSystem.GetVedioPath() + ".mp4";
+            string path = System.IO.Path.Combine(_nextVideoPath, tempPath);
+
+            if (!mediaPlayer.OpenVideoFromFile(_nextVideoLocation, path, mediaPlayer.m_AutoStart))
+            {
+                Debug.LogError("Failed to open video!");
+            }
         }
+
+        //currentMediaIndex = 1;
+        //string tempPath = "step" + currentMediaIndex.ToString()+".mp4";
+        //string path = System.IO.Path.Combine(_nextVideoPath, tempPath);
+
+        //if (!mediaPlayer.OpenVideoFromFile(_nextVideoLocation,path))
+        //{
+        //    Debug.LogError("Failed to open video!");
+        //}
         mediaPlayer.Control.Play();
+    }
+
+    void ResetChildPanel()
+    {
+        if (mediaPlayer.Control.IsPlaying())
+        {
+            mediaPlayer.Control.Stop();
+        }
+        moviePanelUI.SetActive(false);
+        controlPanelUI.SetActive(false);
+        KnowledgePanelUI.SetActive(false);
     }
     
 }

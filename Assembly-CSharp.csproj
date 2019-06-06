@@ -121,11 +121,13 @@
     <Compile Include="Assets\GAF\Scripts\Objects\GAFObjectsManager.cs" />
     <Compile Include="Assets\GAF\Scripts\Objects\Interfaces\GAFBakedObjectsManagerInternal.cs" />
     <Compile Include="Assets\GAF\Scripts\Objects\Interfaces\GAFObjectsManagerInternal.cs" />
+    <Compile Include="Assets\Scripts\ControlPanel.cs" />
     <Compile Include="Assets\Scripts\DataManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GlobalTools.cs" />
     <Compile Include="Assets\Scripts\ISystem.cs" />
     <Compile Include="Assets\Scripts\LoadingPanel.cs" />
+    <Compile Include="Assets\Scripts\MyDrag.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\UIMenuPanel.cs" />
     <Compile Include="Assets\Scripts\UISelectPanel.cs" />
