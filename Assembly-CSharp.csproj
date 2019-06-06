@@ -128,6 +128,7 @@
     <Compile Include="Assets\Scripts\ISystem.cs" />
     <Compile Include="Assets\Scripts\LoadingPanel.cs" />
     <Compile Include="Assets\Scripts\MyDrag.cs" />
+    <Compile Include="Assets\Scripts\RotateController.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\UIMenuPanel.cs" />
     <Compile Include="Assets\Scripts\UISelectPanel.cs" />

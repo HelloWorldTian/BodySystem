@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour {
                         if (!loadingPanel.gameObject.activeSelf)
                         {
                             SystemContainer.SetActive(true);
+                            SystemContainer.GetComponent<RotateController>();
                             SelectPanelUI.SetActive(true);
                             SelectPanel.SetActive(true);
                             StartPanel.SetActive(false);

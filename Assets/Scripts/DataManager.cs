@@ -51,7 +51,7 @@ public class DataManager{
         if (container == null)
         {
             container = GameObject.Find("SystemContainer");
-            container.transform.position = Vector3.zero;
+            container.transform.position = new Vector3(0,190,0);
         }
         valueInfoList tempList = GlobalTools.ReadFromResources(info);
         foreach (valueInfo vi in tempList.m_infoList)
@@ -75,6 +75,7 @@ public class DataManager{
                 Debug.Log("SyetemName"+ tempSystem.GetSystemName());
             }
         }
+        container.AddComponent<RotateController>();
         container.SetActive(false);
     }
 }
