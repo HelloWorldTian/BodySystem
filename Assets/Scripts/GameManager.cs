@@ -12,14 +12,21 @@ public class GameManager : MonoBehaviour {
 
     public GameObject SystemContainer;
 
-    public int currentSelectIndex=0;
+    public int currentSelectIndex;
 
     public static GameManager Instance;
-	// Use this for initialization
-	void Start () {
+
+    private ISystem SelectSystem;
+    private void Awake()
+    {
         Instance = this;
+        currentSelectIndex=1;
         loadingPanel = GameObject.Find("LoadingPanelUI").GetComponent<LoadingPanel>();
         InitGame();
+    }
+    // Use this for initialization
+    void Start () {
+        
     }
 	
 	// Update is called once per frame
@@ -54,11 +61,24 @@ public class GameManager : MonoBehaviour {
                             SelectPanelUI.SetActive(true);
                             SelectPanel.SetActive(true);
                             StartPanel.SetActive(false);
+
+                            SetSelectSystem(currentSelectIndex);
                         }
                         
                     }
                 }
             }
         }
+    }
+   
+    public void SetSelectSystem(int index)//滑动切换或点击页码按钮
+    {
+        if (!DataManager.Instance.m_SystemList.TryGetValue(index, out SelectSystem))
+        {
+            Debug.Log("未找到" + index + "数据");
+            return;
+        }
+        currentSelectIndex = index;   
+        SelectPanelUI.GetComponent<UISelectPanel>().ShowIntroduce(SelectSystem);//显示介绍面板
     }
 }
