@@ -46,6 +46,7 @@ public class UISelectPanel : MonoBehaviour {
             currentPage = 8;
         }
         GameManager.Instance.SetSelectSystem(currentPage);
+        GameManager.Instance.TurnToNext(false);
     }
     public void PageDownBtnClick()
     {
@@ -57,6 +58,7 @@ public class UISelectPanel : MonoBehaviour {
         Debug.Log("down");
 
         GameManager.Instance.SetSelectSystem(currentPage);
+        GameManager.Instance.TurnToNext(true);
     }
     public void SureBtnClick()
     {        

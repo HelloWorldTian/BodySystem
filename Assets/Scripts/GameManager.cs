@@ -88,4 +88,8 @@ public class GameManager : MonoBehaviour {
     {
         return SelectSystem;
     }
+    public void TurnToNext(bool isRight)
+    {
+        RotateController.Instance.TurnNext(isRight);
+    }
 }
