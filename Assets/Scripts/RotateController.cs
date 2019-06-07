@@ -37,6 +37,7 @@ public class RotateController : MonoBehaviour {
             RotateItem _go = new RotateItem();
             _go._o = a;
             _go.angle = i * angle;
+            _go.targetAngle = _go.angle;
             _go.index = i;
             storeItem.Add(i, _go);
             i++;
@@ -82,11 +83,22 @@ public class RotateController : MonoBehaviour {
                 if (Mathf.Abs(kk.angle - kk.targetAngle) < 2f)
                 {
                     kk.angle = kk.targetAngle;
-                    isTuring = false;
+                    HasReach();
+                    break;
                 }
                 kk._o.transform.localPosition = new Vector2(Mathf.Cos(kk.angle * Mathf.Deg2Rad) * longRadius, Mathf.Sin(kk.angle * Mathf.Deg2Rad) * shortRadius);
                 kk._o.transform.localScale = Vector3.one * (1 - ((kk._o.transform.localPosition.y - (-shortRadius)) / shortRadius / 2));             
             }
+        }
+    }
+    void HasReach()
+    {
+        isTuring = false;
+        foreach (var kk in storeItem.Values)
+        {
+            kk.angle = kk.targetAngle;
+            kk._o.transform.localPosition = new Vector2(Mathf.Cos(kk.angle * Mathf.Deg2Rad) * longRadius, Mathf.Sin(kk.angle * Mathf.Deg2Rad) * shortRadius);
+            kk._o.transform.localScale = Vector3.one * (1 - ((kk._o.transform.localPosition.y - (-shortRadius)) / shortRadius / 2));
         }
     }
     public void ControlRotate(bool canRotate)
@@ -100,10 +112,6 @@ public class RotateController : MonoBehaviour {
         speed = isRight ? 10 : -10;
         foreach (var kk in storeItem.Values)
         {
-            if (kk.targetAngle == 0)
-            {
-                kk.targetAngle = kk.angle;
-            }
             kk.targetAngle += 360 / num * (isRight ? 1 : -1);
             if (kk.targetAngle>=360)
             {
@@ -120,8 +128,6 @@ public class RotateController : MonoBehaviour {
         public GameObject _o;
         public int index = 0;
         public float angle = 0;
-
-        public float currentAngle;
-        public float targetAngle;
+        public float targetAngle=0;
     }
 }
